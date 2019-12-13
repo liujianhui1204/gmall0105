@@ -1,0 +1,5 @@
+com\liujianhui\gmall\user\service\impl\UserviceImpl.class
+com\liujianhui\gmall\user\mapper\UmsMemberReceiveAddressMapper.class
+com\liujianhui\gmall\user\GmallUserApplication.class
+com\liujianhui\gmall\user\controller\UserController.class
+com\liujianhui\gmall\user\mapper\UserMapper.class

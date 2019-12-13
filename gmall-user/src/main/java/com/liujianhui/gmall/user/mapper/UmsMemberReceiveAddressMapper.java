@@ -1,6 +1,6 @@
 package com.liujianhui.gmall.user.mapper;
 
-import com.liujianhui.gmall.user.bean.UmsMemberReceiveAddress;
+import com.liujianhui.gmall.bean.UmsMemberReceiveAddress;
 import tk.mybatis.mapper.common.Mapper;
 //继承通用mapper,必须使用泛型
 public interface UmsMemberReceiveAddressMapper extends Mapper<UmsMemberReceiveAddress> {
