@@ -8,19 +8,20 @@ import java.util.Objects;
 @Entity
 @Table(name = "pms_base_attr_info", schema = "gmall")
 public class PmsBaseAttrInfo implements Serializable {
-
-    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String attrName;
     private Long catalog3Id;
     private String isEnabled;
 
     @Id
     @Column(name = "id")
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -69,4 +70,5 @@ public class PmsBaseAttrInfo implements Serializable {
     public int hashCode() {
         return Objects.hash(id, attrName, catalog3Id, isEnabled);
     }
+
 }

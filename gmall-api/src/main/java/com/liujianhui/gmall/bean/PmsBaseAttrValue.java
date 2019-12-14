@@ -6,6 +6,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "pms_base_attr_value", schema = "gmall")
 public class PmsBaseAttrValue {
+
     private long id;
     private String valueName;
     private Long attrId;

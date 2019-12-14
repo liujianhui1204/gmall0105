@@ -27,9 +27,6 @@ public class CatalogController {
     @ResponseBody
     public List<PmsBaseCatalog3> getCatalog3(Integer catalog2Id){
         List<PmsBaseCatalog3> pmsBaseCatalog3s = this.catalogService.getCatalog3(catalog2Id);
-        for(PmsBaseCatalog3 i:pmsBaseCatalog3s){
-            System.out.println(i.getName());
-        }
         return pmsBaseCatalog3s;
     }
     //查询二级类目
