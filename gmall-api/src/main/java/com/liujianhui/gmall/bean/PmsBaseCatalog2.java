@@ -1,22 +1,40 @@
 package com.liujianhui.gmall.bean;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
 @Table(name = "pms_base_catalog2", schema = "gmall")
-public class PmsBaseCatalog2 {
-    private int id;
+public class PmsBaseCatalog2 implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
+    private Integer id;
+    @Column
     private String name;
+    @Column
     private Integer catalog1Id;
+
+    @Transient
+    private List<PmsBaseCatalog3> catalog3s;
+
+    public List<PmsBaseCatalog3> getCatalog3s() {
+        return catalog3s;
+    }
+
+    public void setCatalog3s(List<PmsBaseCatalog3> catalog3s) {
+        this.catalog3s = catalog3s;
+    }
 
     @Id
     @Column(name = "id")
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

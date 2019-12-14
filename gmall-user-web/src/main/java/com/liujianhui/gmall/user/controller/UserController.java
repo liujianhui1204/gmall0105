@@ -33,7 +33,6 @@ public class UserController {
         return umsMembers;
     }
 
-
     //测试方法
     @RequestMapping("/index")
     @ResponseBody
