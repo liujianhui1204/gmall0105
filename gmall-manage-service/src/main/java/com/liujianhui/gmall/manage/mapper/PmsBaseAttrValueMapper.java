@@ -1,4 +1,7 @@
 package com.liujianhui.gmall.manage.mapper;
 
-public interface PmsBaseAttrValueMapper {
+import com.liujianhui.gmall.bean.PmsBaseAttrValue;
+import tk.mybatis.mapper.common.Mapper;
+
+public interface PmsBaseAttrValueMapper extends Mapper<PmsBaseAttrValue> {
 }

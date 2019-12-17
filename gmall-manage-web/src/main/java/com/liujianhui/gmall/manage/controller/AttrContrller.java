@@ -2,6 +2,7 @@ package com.liujianhui.gmall.manage.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.liujianhui.gmall.bean.PmsBaseAttrInfo;
+import com.liujianhui.gmall.bean.PmsBaseAttrValue;
 import com.liujianhui.gmall.service.AttrService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,10 +21,12 @@ public class AttrContrller {
     @RequestMapping("/saveAttrInfo")
     @ResponseBody
     public String saveAttrInfo (@RequestBody PmsBaseAttrInfo pmsBaseAttrInfo){
+        //前台向后台传的json参数，必须要和实体类中的变量名称一致
         if(pmsBaseAttrInfo != null){
-            int saveAttrInfo = this.attrService.saveAttrInfo(pmsBaseAttrInfo);
-            if(saveAttrInfo != 0){
-                return "saveAttrInfo";
+            List<PmsBaseAttrValue> attrValuesList = pmsBaseAttrInfo.getAttrValueList();
+            String success = this.attrService.saveAttrInfo(pmsBaseAttrInfo);
+            if(success != null){
+                return "success";
             }
         }
         return null;

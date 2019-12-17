@@ -2,6 +2,7 @@ package com.liujianhui.gmall.bean;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 //商品属性表
@@ -14,6 +15,16 @@ public class PmsBaseAttrInfo implements Serializable {
     private String attrName;
     private Long catalog3Id;
     private String isEnabled;
+    @Transient
+    private List<PmsBaseAttrValue> attrValueList;
+
+    public List<PmsBaseAttrValue> getAttrValueList() {
+        return attrValueList;
+    }
+
+    public void setAttrValueList(List<PmsBaseAttrValue> attrValueList) {
+        this.attrValueList = attrValueList;
+    }
 
     @Id
     @Column(name = "id")
