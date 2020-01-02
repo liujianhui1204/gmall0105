@@ -3,6 +3,7 @@ package com.liujianhui.gmall.manage.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.liujianhui.gmall.bean.PmsBaseAttrInfo;
 import com.liujianhui.gmall.bean.PmsBaseAttrValue;
+import com.liujianhui.gmall.bean.PmsBaseSaleAttr;
 import com.liujianhui.gmall.service.AttrService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -17,7 +18,22 @@ import java.util.List;
 public class AttrContrller {
     @Reference
     private AttrService attrService;
-    //添加属性
+    //为修改属性查询一个attrValueList集合
+    @RequestMapping("/getAttrValueList")
+    @ResponseBody
+    public List<PmsBaseAttrValue> getAttrValueList(Long attrId){
+        List<PmsBaseAttrValue> pmsBaseAttrValues = this.attrService.getAttrValueList(attrId);
+        return pmsBaseAttrValues;
+    }
+    //查询销售属性名称baseSaleAttrList
+    @RequestMapping("/baseSaleAttrList")
+    @ResponseBody
+    public List<PmsBaseSaleAttr> baseSaleAttrList (){
+        List<PmsBaseSaleAttr> pmsBaseSaleAttrs = this.attrService.baseSaleAttrList();
+
+        return pmsBaseSaleAttrs;
+    }
+    //添加属性//和修改属性、属性值
     @RequestMapping("/saveAttrInfo")
     @ResponseBody
     public String saveAttrInfo (@RequestBody PmsBaseAttrInfo pmsBaseAttrInfo){

@@ -1,24 +1,23 @@
-package com.liujianhui.gmall.bean;
+package com.example.demo.bean;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "pms_product_image", schema = "gmall")
-public class PmsProductImage implements Serializable {
-    private Long id;
+@Table(name = "pms_product_image", schema = "gmall", catalog = "")
+public class PmsProductImage {
+    private long id;
     private Long productId;
     private String imgName;
     private String imgUrl;
 
     @Id
     @Column(name = "id")
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

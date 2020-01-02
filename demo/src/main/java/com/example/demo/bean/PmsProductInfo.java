@@ -1,48 +1,24 @@
-package com.liujianhui.gmall.bean;
+package com.example.demo.bean;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "pms_product_info", schema = "gmall")
-public class PmsProductInfo implements Serializable {
-
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@Table(name = "pms_product_info", schema = "gmall", catalog = "")
+public class PmsProductInfo {
+    private long id;
     private String productName;
     private String description;
     private Long catalog3Id;
     private Long tmId;
-    @Transient
-    private List<PmsProductSaleAttr> pmsProductSaleAttrs;
-    @Transient
-    private List<PmsProductImage> pmsProductImages;
-
-    public List<PmsProductSaleAttr> getPmsProductSaleAttrs() {
-        return pmsProductSaleAttrs;
-    }
-
-    public void setPmsProductSaleAttrs(List<PmsProductSaleAttr> pmsProductSaleAttrs) {
-        this.pmsProductSaleAttrs = pmsProductSaleAttrs;
-    }
-
-    public List<PmsProductImage> getPmsProductImages() {
-        return pmsProductImages;
-    }
-
-    public void setPmsProductImages(List<PmsProductImage> pmsProductImages) {
-        this.pmsProductImages = pmsProductImages;
-    }
 
     @Id
     @Column(name = "id")
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

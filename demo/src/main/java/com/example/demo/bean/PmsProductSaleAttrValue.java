@@ -1,24 +1,23 @@
-package com.liujianhui.gmall.bean;
+package com.example.demo.bean;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "pms_product_sale_attr_value", schema = "gmall")
-public class PmsProductSaleAttrValue implements Serializable {
-    private Long id;
+@Table(name = "pms_product_sale_attr_value", schema = "gmall", catalog = "")
+public class PmsProductSaleAttrValue {
+    private long id;
     private Long productId;
     private Long saleAttrId;
     private String saleAttrValueName;
 
     @Id
     @Column(name = "id")
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
